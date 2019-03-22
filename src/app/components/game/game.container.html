@@ -1,0 +1,17 @@
+<rps-scoreboard [playerScore]="playerScore" [computerScore]="computerScore"></rps-scoreboard>
+
+<div *ngIf="!isGameFinished; else finished" class="player-area">
+  <div class="player-hand">
+    <rps-game-element *ngFor="let element of gameService.gameElements" [gameElement]="element" [playable]="!isLoading" (onClick)="play($event)"></rps-game-element>
+  </div>
+  <div class="player-hand">
+    <rps-game-element *ngIf="opponentChooses" [gameElement]="opponentChooses" ></rps-game-element>
+    <p class="message" *ngIf="opponentChooses">COM chooses {{opponentChooses.name}}.</p>
+  </div>
+</div>
+<ng-template #finished>
+  <button (click)="restartGame()">Restart Game</button>
+</ng-template>
+
+<p class="message">{{currentMessage}}</p>
+

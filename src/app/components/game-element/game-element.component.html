@@ -1,0 +1,3 @@
+<div *ngIf="gameElement" test-id="game-element" (click)="playable && onClick.emit(gameElement)" [ngClass]="playable ? 'cursor-click' : 'cursor-disabled'">
+    <i [ngClass]="['fas', 'fa-hand-'+gameElement.name]"></i>
+</div>

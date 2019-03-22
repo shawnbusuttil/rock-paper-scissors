@@ -1,0 +1,25 @@
+:host {
+  width: 100px;
+  height: 100px;
+  display: block;
+  font-size: 4rem;
+  cursor: pointer;
+  line-height: 1.6;
+  margin: 10px auto;
+  border-radius: 50px;
+  background-color: #fafafa;
+  box-shadow: 1px 1px 3px -1px;
+
+  &:hover {
+    color: #1f921f;
+    transition: 0.5s;
+  }
+
+  .cursor-click {
+    cursor: pointer;
+  }
+
+  .cursor-disabled {
+    cursor: not-allowed;
+  }
+}
